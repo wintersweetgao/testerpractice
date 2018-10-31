@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hx.sofatest</groupId>
+    <artifactId>testerpractice</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!--        <dependency>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                    <version>4.7</version>
+                    <scope>test</scope>
+                </dependency>-->
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.10</version>
+            <!-- <scope>test</scope>-->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <!--<include></include>
+                     **/*Test.java ; **/Test*.java ; **/*TestCase.java  maven默认跑的用例-->
+                    <parallel>methods</parallel>
+                    <threadCount>10</threadCount>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <!-- <skip>true</skip> -->
+                    <!-- <testFailureIgnore>true</testFailureIgnore> -->
+                </configuration>
+            </plugin>
+            <!-- ======================打包配置开始======================== -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 配置文件的目标目录 -->
+                    <configurationDirectory>assembly</configurationDirectory>
+                    <!-- 从哪里拷贝配置文件 (默认src/main/config) -->
+                    <configurationSourceDirectory>assembly</configurationSourceDirectory>
+                    <!-- 拷贝配置文件到上面的目录中 -->
+                    <copyConfigurationDirectory>true</copyConfigurationDirectory>
+                    <includeConfigurationDirectoryInClasspath>true
+                    </includeConfigurationDirectoryInClasspath>
+                    <!-- lib目录中jar的存放规则，默认是${groupId}/${artifactId}的目录格式，flat表示直接把jar放到lib目录 -->
+                    <repositoryLayout>flat</repositoryLayout>
+                    <!-- 打包的jar，以及maven依赖的jar放到这个目录里面 -->
+                    <repositoryName>lib</repositoryName>
+                    <!-- 根目录 -->
+                    <!-- 打包后的exe文件放在 ：E:\p\testerpractice\target\testerpractice-0.0.1-SNAPSHOT\bin -->
+                    <assembleDirectory>
+                        ${project.build.directory}/${project.artifactId}-${project.version}
+                    </assembleDirectory>
+
+                    <binFileExtensions>
+                        <!--<unix>.sh</unix>-->
+                        <windows>.bat</windows>
+                    </binFileExtensions>
+                    <platforms>
+                        <!-- 生成window平台的执行脚本 -->
+                        <!--<platform>unix</platform>-->
+                        <platform>windows</platform>
+                    </platforms>
+
+                    <programs>
+                        <program>
+                            <mainClass>chapter5.TriangleMain</mainClass>
+                            <name>TriangleMain</name>
+                        </program>
+                    </programs>
+                </configuration>
+            </plugin>
+            <!-- ======================打包配置结束======================== -->
+
+        </plugins>
+    </build>
+</project>
