@@ -2,17 +2,21 @@ package chapter7;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static org.mockito.Mockito.*;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * @author dongmei.gao
  * @date 2018/11/20 11:11
  */
 public class MockCifTest {
+    /**引入支付实现类*/
    private PayImpl payImpl = new PayImpl();
-   //0、创建mock对象
+   /**0、创建mock对象*/
    private CifClient cifClientMock = mock(CifClient.class);
-
+   /**用户id*/
    public String userID = "2055XXXXX";
     /**
      * 正常用例

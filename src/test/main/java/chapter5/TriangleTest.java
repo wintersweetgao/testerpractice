@@ -1,5 +1,6 @@
 package chapter5;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,29 +11,32 @@ import chaper5.TriangleInterface;
 import chaper5.TriangleInterfaceImpl;
 
 /**
- * 三角性测试类 todo 引入log4j
+ * 三角性测试类
  */
 public class TriangleTest {
+    /**日志*/
+    private static final Logger logger = Logger.getLogger(TriangleTest.class);
 
     /**
      * 测试方法
      *
      * @param caseId    用例id
-     * @param a         三角性边a
-     * @param b         三角性边a
-     * @param c         三角性边c
+     * @param edgeA     三角性边a
+     * @param edgeB     三角性边b
+     * @param edgeC     三角性边c
      * @param expResult 期望结果
      */
     @Test(dataProvider = "triangle_test_data")
-    public void test(String caseId, int a, int b, int c, String expResult) {
-        System.out.println("==========用例开始执行caseId：==========" + caseId);
-        Triangle triangle = new Triangle(a, b, c);
+    public void test(final String caseId, final int edgeA, final int edgeB, final int edgeC, final String expResult) {
+       logger.info("==========用例开始执行caseId：==========" + caseId);
+
+        Triangle triangle = new Triangle(edgeA, edgeB, edgeC);
         TriangleInterface triangleImpl = new TriangleInterfaceImpl();
 
         BaseResult result = triangleImpl.type(triangle);
         Assert.assertEquals(result.content, expResult);
         Assert.assertTrue(result.isSuccess);
-        System.out.println("==========用例执行结束caseId：==========" + caseId);
+        logger.info("==========用例执行结束caseId：==========" + caseId);
     }
 
     /**

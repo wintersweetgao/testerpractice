@@ -1,8 +1,11 @@
 package chapter7;
+import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.List;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * @author dongmei.gao
@@ -10,6 +13,8 @@ import static org.mockito.Mockito.*;
  * @link https://site.mockito.org/
  */
 public class MockListTest {
+    /**日志*/
+    private static final Logger logger = Logger.getLogger(MockListTest.class);
     /**
      * 目的是验证交互，添加和清理过list
      */
@@ -26,6 +31,10 @@ public class MockListTest {
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }
+
+    /**
+     * 插桩测试
+     */
     @Test
     public void stubMockTest(){
         // you can mock concrete classes, not only interfaces
@@ -35,9 +44,9 @@ public class MockListTest {
         when(mockedList.get(0)).thenReturn("first");
 
         // the following prints "first"
-        System.out.println(mockedList.get(0));
+        logger.info(mockedList.get(0));
 
         // the following prints "null" because get(999) was not stubbed
-        System.out.println(mockedList.get(999));
+        logger.info(mockedList.get(999));
     }
 }

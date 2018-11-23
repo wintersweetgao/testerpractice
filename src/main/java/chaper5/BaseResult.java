@@ -1,10 +1,13 @@
 package chaper5;
 
+import java.io.Serializable;
+
 /**
  * @author dongmei.gao
  * @date 2018/10/30 13:28 结果类
  */
 public class BaseResult {
+
     /**
      * 是否成功
      */

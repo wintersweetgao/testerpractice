@@ -5,8 +5,11 @@ package chapter7;
  * @date 2018/11/20 10:57
  */
 public class UserInf {
+    /**用户id*/
     public String userId ;
+    /**用户名字*/
     public String name ;
+    /**用户年龄*/
     public int age ;
 
 

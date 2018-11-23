@@ -5,37 +5,46 @@ package chaper5;
  * @date 2018/10/30 13:25
  */
 public class Triangle {
-   public int edge_a;
-   public int edge_b;
-   public int edge_c;
+    /**边a*/
+    public int edgeA;
+    /**边b*/
+    public int edgeB;
+    /**边c*/
+    public int edgeC;
 
-    public Triangle(int edge_a, int edge_b, int edge_c) {
-        this.edge_a = edge_a;
-        this.edge_b = edge_b;
-        this.edge_c = edge_c;
+    /**
+     * 构造体
+     * @param edgeA
+     * @param edgeB
+     * @param edgeC
+     */
+    public Triangle(int edgeA, int edgeB, int edgeC) {
+        this.edgeA = edgeA;
+        this.edgeB = edgeB;
+        this.edgeC = edgeC;
     }
 
-    public int getEdge_a() {
-        return edge_a;
+    public int getEdgeA() {
+        return edgeA;
     }
 
-    public void setEdge_a(int edge_a) {
-        this.edge_a = edge_a;
+    public void setEdgeA(int edgeA) {
+        this.edgeA = edgeA;
     }
 
-    public int getEdge_b() {
-        return edge_b;
+    public int getEdgeB() {
+        return edgeB;
     }
 
-    public void setEdge_b(int edge_b) {
-        this.edge_b = edge_b;
+    public void setEdgeB(int edgeB) {
+        this.edgeB = edgeB;
     }
 
-    public int getEdge_c() {
-        return edge_c;
+    public int getEdgeC() {
+        return edgeC;
     }
 
-    public void setEdge_c(int edge_c) {
-        this.edge_c = edge_c;
+    public void setEdgeC(int edgeC) {
+        this.edgeC = edgeC;
     }
 }
