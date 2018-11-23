@@ -5,9 +5,9 @@ package chaper5;
  * @date 2018/10/30 13:25
  */
 public class Triangle {
-    int edge_a;
-    int edge_b;
-    int edge_c;
+   public int edge_a;
+   public int edge_b;
+   public int edge_c;
 
     public Triangle(int edge_a, int edge_b, int edge_c) {
         this.edge_a = edge_a;

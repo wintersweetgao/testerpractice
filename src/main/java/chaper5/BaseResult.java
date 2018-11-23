@@ -38,7 +38,7 @@ public class BaseResult {
         return msg;
     }
 
-    public void setMsg(String msg) {
+    public void setMsg(String msg) {//NOPMD
         this.msg = msg;
     }
 
@@ -46,7 +46,7 @@ public class BaseResult {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(String content) {//NOPMD
         this.content = content;
     }
 }
