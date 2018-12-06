@@ -51,6 +51,5 @@ public class SeleniumAutoTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //6、断言页面部分文本信息中有关键字；
         Assert.assertTrue(driver.findElement(By.partialLinkText(key)).isDisplayed());
-
     }
 }
