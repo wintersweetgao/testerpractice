@@ -21,6 +21,7 @@ public class TriangleInterfaceImpl implements TriangleInterface {
                     triangle.edgeB < 1 || triangle.edgeB > 100 ||
                     triangle.edgeC < 1 || triangle.edgeC > 100) {
                 logger.warn("输入参数无效");
+
                 return buildResult(true, "无效输入", triangle);
             }
 

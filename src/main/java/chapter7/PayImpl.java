@@ -25,7 +25,8 @@ public class PayImpl implements PayInterface {
             logger.info(userInf);
             return true;
         } catch (Exception e) {
-            logger.error("捕获异常！",e);
+            //包含案发现场信息+异常堆栈信息
+            logger.error("捕获异常！"+e.getMessage(),e);
         }
         return false;
     }
