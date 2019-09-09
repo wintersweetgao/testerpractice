@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 打开百度页面输入关键字selenium自动查询
  * @author dongmei.gao
  * @date 2018/12/4 15:37
  */
@@ -22,7 +23,7 @@ public class SeleniumAutoTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        System.setProperty("webdriver.gecko.driver", "E:\\my\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "D:\\prd\\geckodriver.exe");
         driver = new FirefoxDriver();
     }
     @AfterMethod
@@ -43,6 +44,7 @@ public class SeleniumAutoTest {
 
         //2、找到百度输入框
         WebElement element = driver.findElement(By.name("wd"));
+
         //3、输入值
         element.sendKeys(key);
         //4、使用于form页面元素，提交form到web服务器端

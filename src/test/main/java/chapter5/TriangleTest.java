@@ -14,7 +14,7 @@ import chaper5.TriangleInterfaceImpl;
  * 三角性测试类
  */
 public class TriangleTest {
-    /**日志*/
+   /**日志*/
     private static final Logger logger = Logger.getLogger(TriangleTest.class);
 
     /**
