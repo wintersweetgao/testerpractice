@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
  * @link https://site.mockito.org/
  */
 public class MockListTest {
-    /**日志*/
+   /**日志*/
     private static final Logger logger = Logger.getLogger(MockListTest.class);
     /**
      * 目的是验证交互，添加和清理过list

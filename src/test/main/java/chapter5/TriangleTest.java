@@ -45,7 +45,7 @@ public class TriangleTest {
     @DataProvider(name = "triangle_test_data")
     public static Object[][] data() {
         return new Object[][]{
-                {"case01", 3, 4, 5, "一般三角性"},
+                {"case01", 3, 4, 5, "三角性"},
                 {"case02", 0, 1, 2, "无效输入"},
                 {"case03", 101, 99, 98, "无效输入"},
                 {"case04", 1, 0, 2, "无效输入"},
