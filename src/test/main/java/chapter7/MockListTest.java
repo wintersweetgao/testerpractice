@@ -27,7 +27,7 @@ public class MockListTest {
         mockedList.clear();
 
         // selective, explicit, highly readable verification
-        //选择的，明确，高可读性验证
+        //选择的，明确，高可读形验证
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }

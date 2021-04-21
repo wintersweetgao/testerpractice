@@ -1,4 +1,4 @@
-package chaper5;
+package chapter5;
 
 /**
  * @author dongmei.gao

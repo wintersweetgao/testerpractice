@@ -48,7 +48,7 @@ public class MainPage {
      * 打开主页
      * @param url
      */
-    public void openMainPage(String url){
+    public void openMainPage(final String url){
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
     }

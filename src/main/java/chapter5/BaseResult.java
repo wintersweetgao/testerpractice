@@ -1,6 +1,4 @@
-package chaper5;
-
-import java.io.Serializable;
+package chapter5;
 
 /**
  * @author dongmei.gao
@@ -17,7 +15,7 @@ public class BaseResult {
      */
     public String msg;
     /**
-     * 类型返回：等腰三角性，等边三角形，一般三角性，不能构成三角性，无效输入
+     * 类型返回：等腰三角形，等边三角形，一般三角形，不能构成三角形，无效输入
      */
     public String content;
 

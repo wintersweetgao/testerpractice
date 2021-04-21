@@ -1,4 +1,4 @@
-package chaper5;
+package chapter5;
 
 import org.apache.log4j.Logger;
 
@@ -29,21 +29,21 @@ public class TriangleInterfaceImpl implements TriangleInterface {
             if (triangle.edgeA + triangle.edgeB <= triangle.edgeC ||
                     triangle.edgeB + triangle.edgeC <= triangle.edgeA ||
                     triangle.edgeA + triangle.edgeC <= triangle.edgeB) {
-                logger.warn("输入不构成三角性");
-                return buildResult(true, "不能构成三角性", triangle);
+                logger.warn("输入不构成三角形");
+                return buildResult(true, "不能构成三角形", triangle);
             }
 
             if (triangle.edgeA == triangle.edgeB &&
                     triangle.edgeB == triangle.edgeC) {
-                return buildResult(true, "等边三角性", triangle);
+                return buildResult(true, "等边三角形", triangle);
             }
 
             if (triangle.edgeA == triangle.edgeB ||
                     triangle.edgeA == triangle.edgeC ||
                     triangle.edgeB == triangle.edgeC) {
-                return buildResult(true, "等腰三角性", triangle);
+                return buildResult(true, "等腰三角形", triangle);
             }
-            return buildResult(true, "一般三角性", triangle);
+            return buildResult(true, "一般三角形", triangle);
         } catch (Exception e) {
             return buildResult(false, "程序捕获异常", triangle);
         }

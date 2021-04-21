@@ -1,4 +1,4 @@
-package chaper5;
+package chapter5;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @author dongmei.gao
- * @date 2018/10/31 10:04 三角性main函数
+ * @date 2018/10/31 10:04 三角形main函数
  */
 public class TriangleMain {
     /**日志*/
@@ -25,7 +25,7 @@ public class TriangleMain {
 
         try {
             while (!isQuit) {
-                logger.info("请输入三角性三边（整数以逗号分隔，退出请输入q）：");
+                logger.info("请输入三角形三边（整数以逗号分隔，退出请输入q）：");
                 String edges = scanner.nextLine();
                 if (edges.startsWith("q")) {
                     isQuit = true;

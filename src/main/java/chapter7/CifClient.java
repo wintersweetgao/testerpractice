@@ -10,5 +10,5 @@ public interface CifClient {
      * @param userId
      * @return 用户信息
      */
-    public UserInf userQuery(String userId);
+     UserInf userQuery(String userId);
 }

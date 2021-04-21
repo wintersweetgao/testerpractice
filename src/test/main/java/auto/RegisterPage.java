@@ -71,7 +71,7 @@ public class RegisterPage {
     @FindBy(how = How.XPATH, xpath = "/html/body/div[8]/div/div[3]")
     //@FindBy(how = How.XPATH, xpath = "//div[text()=\"副教授(副高)级\"]"),卡死不动这个
     WebElement userTitle;
-    /**职务，根据属性定位*/
+    /**职务，根据属形定位*/
     @FindBy(how = How.XPATH, xpath = "//input[@placeholder=\"请选择职务\"]")
     WebElement postsInput ;
     @FindBy(how = How.XPATH, xpath = "/html/body/div[5]/div/div[44]")
@@ -144,7 +144,7 @@ public class RegisterPage {
     }
 
     /**
-     * 执行js脚本,移除所有input的readonly属性
+     * 执行js脚本,移除所有input的readonly属形
      */
     public void executeJs(){
         /*

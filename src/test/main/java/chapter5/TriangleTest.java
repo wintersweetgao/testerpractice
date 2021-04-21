@@ -5,13 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import chaper5.BaseResult;
-import chaper5.Triangle;
-import chaper5.TriangleInterface;
-import chaper5.TriangleInterfaceImpl;
-
 /**
- * 三角性测试类
+ * 三角形测试类
  */
 public class TriangleTest {
    /**日志*/
@@ -21,9 +16,9 @@ public class TriangleTest {
      * 测试方法
      *
      * @param caseId    用例id
-     * @param edgeA     三角性边a
-     * @param edgeB     三角性边b
-     * @param edgeC     三角性边c
+     * @param edgeA     三角形边a
+     * @param edgeB     三角形边b
+     * @param edgeC     三角形边c
      * @param expResult 期望结果
      */
     @Test(dataProvider = "triangle_test_data")
@@ -45,20 +40,20 @@ public class TriangleTest {
     @DataProvider(name = "triangle_test_data")
     public static Object[][] data() {
         return new Object[][]{
-                {"case01", 3, 4, 5, "三角性"},
+                {"case01", 3, 4, 5, "一般三角形"},
                 {"case02", 0, 1, 2, "无效输入"},
                 {"case03", 101, 99, 98, "无效输入"},
                 {"case04", 1, 0, 2, "无效输入"},
                 {"case05", 99, 101, 98, "无效输入"},
                 {"case06", 1, 2, 0, "无效输入"},
                 {"case07", 99, 98, 101, "无效输入"},
-                {"case08", 1, 2, 3, "不能构成三角性"},
-                {"case09", 1, 3, 2, "不能构成三角性"},
-                {"case10", 3, 1, 2, "不能构成三角性"},
-                {"case11", 3, 3, 4, "等腰三角性"},
-                {"case12", 4, 3, 3, "等腰三角性"},
-                {"case13", 3, 4, 3, "等腰三角性"},
-                {"case12", 4, 5, 6, "一般三角性"},
-                {"case12", 3, 3, 3, "等边三角性"}};
+                {"case08", 1, 2, 3, "不能构成三角形"},
+                {"case09", 1, 3, 2, "不能构成三角形"},
+                {"case10", 3, 1, 2, "不能构成三角形"},
+                {"case11", 3, 3, 4, "等腰三角形"},
+                {"case12", 4, 3, 3, "等腰三角形"},
+                {"case13", 3, 4, 3, "等腰三角形"},
+                {"case14", 4, 5, 6, "一般三角形"},
+                {"case15", 3, 3, 3, "等边三角形"}};
     }
 }

@@ -1,6 +1,7 @@
 package chapter7;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
 
 
 /**
@@ -18,7 +19,7 @@ public class PayImpl implements PayInterface {
      * @param userId 用户id
      * @return  返回是否支付成功
      */
-    public boolean pay(String userId) {
+    public boolean pay(final String userId) {
         try {
             UserInf userInf = cifClient.userQuery(userId);
             //do some biz
@@ -26,7 +27,9 @@ public class PayImpl implements PayInterface {
             return true;
         } catch (Exception e) {
             //包含案发现场信息+异常堆栈信息
-            logger.error("捕获异常！"+e.getMessage(),e);
+            if(logger.isEnabledFor(Priority.ERROR)){
+                logger.error("捕获异常！"+e.getMessage(),e);
+            }
         }
         return false;
     }

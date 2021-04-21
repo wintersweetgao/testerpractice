@@ -10,5 +10,5 @@ public interface PayInterface {
      * @param userId 用户id
      * @return  返回是否支付成功
      */
-    public boolean pay(String userId);
+     boolean pay(String userId);
 }

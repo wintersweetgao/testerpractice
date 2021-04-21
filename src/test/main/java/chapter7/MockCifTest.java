@@ -24,10 +24,7 @@ public class MockCifTest {
     @Test
     public void payNorTest(){
         //1、生成mock结果对象
-        UserInf userInfMock = new UserInf();
-        userInfMock.setUserId(userID);
-        userInfMock.setAge(10);
-        userInfMock.setName("LiLei");
+        UserInf userInfMock = new UserInf(userID, "LiLei" , 10);
         //2、set mock
         payImpl.setCifClient(cifClientMock);
         //3、mock

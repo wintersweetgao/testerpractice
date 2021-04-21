@@ -10,7 +10,7 @@ public class CifClientImpl implements CifClient {
      * @param userId
      * @return 用户信息
      */
-    public UserInf userQuery(String userId) {
+    public UserInf userQuery(final String userId) {
         //call  other system service
         return null;
     }
